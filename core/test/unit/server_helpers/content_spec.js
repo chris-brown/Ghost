@@ -10,6 +10,20 @@ describe('{{content}} helper', function () {
     before(function () {
         utils.loadHelpers();
     });
+    
+    it('returns less than a minute', function () {
+        var markdown = '<p>Hello this is a short sentance</p>',
+            rendered = (
+                helpers.content
+                    .call(
+                        {markdown: markdown},
+                        'count'
+                    )
+                );
+
+        should.exist(rendered);
+        rendered.should.equal('less than a minute');
+    });
 
     it('has loaded content helper', function () {
         should.exist(handlebars.helpers.content);
