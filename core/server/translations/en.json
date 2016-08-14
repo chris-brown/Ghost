@@ -25,6 +25,9 @@
                 "mail": {
                     "invitedByName": "{invitedByName} has invited you to join {blogName}"
                 }
+            },
+            "clients": {
+                "clientNotFound": "Client not found"
             }
         }
     },
@@ -170,6 +173,7 @@
             }
         },
         "general": {
+            "maintenance": "Ghost is currently undergoing maintenance, please wait a moment then retry.",
             "moreInfo": "\nMore info: {info}",
             "requiredOnFuture": "This will be required in future. Please see {link}"
         },
@@ -343,7 +347,8 @@
             },
             "subscribers": {
                 "subscriberNotFound": "Subscriber not found.",
-                "subscriberAlreadyExists": "Email address is already subscribed."
+                "subscriberAlreadyExists": "Email address is already subscribed.",
+                "selectValidFile": "Please select a valid CSV file to import."
             },
             "tags": {
                 "tagNotFound": "Tag not found."
@@ -419,10 +424,10 @@
             "versioning": {
                 "index": {
                     "dbVersionNotRecognized": "Database version is not recognized",
-                    "settingsTableDoesNotExist": "Settings table does not exist",
+                    "databaseNotPopulated": "Database is not populated.",
                     "cannotMigrate": {
-                        "error": "Unable to upgrade from version 0.4.2 or earlier",
-                        "context": "Please upgrade to 0.7.1 first"
+                        "error": "Unable to upgrade from version 0.4.2 or earlier.",
+                        "context": "Please upgrade to 0.7.1 first."
                     }
                 }
             },

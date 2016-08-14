@@ -393,6 +393,10 @@ Post = ghostBookshelf.Model.extend({
         return this.morphMany('AppField', 'relatable');
     },
 
+    defaultColumnsToFetch: function defaultColumnsToFetch() {
+        return ['id', 'published_at', 'slug', 'author_id'];
+    },
+
     toJSON: function toJSON(options) {
         options = options || {};
 
@@ -427,6 +431,16 @@ Post = ghostBookshelf.Model.extend({
             updated_at: 'DESC',
             id: 'DESC'
         };
+    },
+
+    orderDefaultRaw: function () {
+        return '' +
+            'CASE WHEN posts.status = \'scheduled\' THEN 1 ' +
+            'WHEN posts.status = \'draft\' THEN 2 ' +
+            'ELSE 3 END ASC,' +
+            'posts.published_at DESC,' +
+            'posts.updated_at DESC,' +
+            'posts.id DESC';
     },
 
     /**
